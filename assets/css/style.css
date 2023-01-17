@@ -1576,17 +1576,32 @@ html[dir=ltr] .fixed-icon {
 
 header {
   width: 100%;
-  padding: 50px 0px;
+  padding: 0px 0px;
   position: relative;
-  background: url("../images/intro.png") center/cover no-repeat;
   z-index: 9;
   overflow: hidden;
 }
 header .swiper-wrapper {
   width: 100%;
-  padding: 200px 0px 135px;
+}
+header .swiper-slide {
+  padding: 250px 0px 185px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   position: relative;
   z-index: 9;
+}
+header .swiper-slide::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 header .contain {
   width: 100%;
@@ -2078,23 +2093,30 @@ header .swiper-slide-active h1, header .swiper-slide-active p, header .swiper-sl
   color: var(--dark-color);
   margin-bottom: 40px;
 }
-.contact-us .contact-form .from-contain {
+
+.from-contain {
   width: 100%;
 }
-.contact-us .contact-form .from-contain .form-group {
+.from-contain h2 {
+  font-size: 15px;
+  font-weight: 900;
+  color: var(--dark-color);
+  margin-bottom: 20px;
+}
+.from-contain .form-group {
   width: 100%;
   height: 50px;
   position: relative;
   margin-bottom: 10px;
 }
-.contact-us .contact-form .from-contain .form-group.text-area {
+.from-contain .form-group.text-area {
   height: 100px;
   margin-bottom: 34px;
 }
-.contact-us .contact-form .from-contain .form-group.text-area .form-control {
+.from-contain .form-group.text-area .form-control {
   border-radius: 20px;
 }
-.contact-us .contact-form .from-contain .form-group .form-control {
+.from-contain .form-group .form-control {
   width: 100%;
   height: 100%;
   border-radius: 25px;
@@ -2107,25 +2129,154 @@ header .swiper-slide-active h1, header .swiper-slide-active p, header .swiper-sl
   font-weight: 700;
   resize: none;
 }
-.contact-us .contact-form .from-contain .form-group .form-control::-moz-placeholder {
+.from-contain .form-group .form-control::-moz-placeholder {
   color: var(--gray-color);
   font-size: 16px;
   font-weight: 700;
 }
-.contact-us .contact-form .from-contain .form-group .form-control:-ms-input-placeholder {
+.from-contain .form-group .form-control:-ms-input-placeholder {
   color: var(--gray-color);
   font-size: 16px;
   font-weight: 700;
 }
-.contact-us .contact-form .from-contain .form-group .form-control::placeholder {
+.from-contain .form-group .form-control::placeholder {
   color: var(--gray-color);
   font-size: 16px;
   font-weight: 700;
 }
-.contact-us .contact-form .from-contain .form-group .form-control:hover, .contact-us .contact-form .from-contain .form-group .form-control:active {
+.from-contain .form-group .form-control:hover, .from-contain .form-group .form-control:active {
   background-color: rgba(177, 140, 85, 0.1);
 }
-.contact-us .contact-form .from-contain .custom-btn {
+.from-contain .upload-image {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+.from-contain .upload-image .upload-shape {
+  width: 100%;
+  padding: 36px 0px;
+  background-color: rgba(134, 85, 157, 0.04);
+  border-radius: 15px;
+  border: 1px solid rgba(134, 85, 157, 0.06);
+  display: flex !important;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.from-contain .upload-image .upload-shape.active {
+  width: calc(100% - 170px);
+}
+.from-contain .upload-image .upload-shape .custom-file-input {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  cursor: pointer;
+  opacity: 0;
+}
+.from-contain .upload-image .upload-shape img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -webkit-margin-end: 20px;
+          margin-inline-end: 20px;
+  filter: var(--secondary-filter);
+}
+.from-contain .upload-image .upload-shape .camera-data h2 {
+  color: var(--dark-blue);
+  font-size: 15px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+.from-contain .upload-image .upload-shape .camera-data p {
+  color: #2ED2BC;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0px;
+}
+.from-contain .upload-image .image-content {
+  width: 155px !important;
+  height: 122px !important;
+  background-color: rgba(134, 85, 157, 0.04);
+  border-radius: 15px;
+  border: 1px solid rgba(134, 85, 157, 0.06);
+  display: none;
+}
+.from-contain .upload-image .image-content.active {
+  display: block;
+}
+.from-contain .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  cursor: pointer;
+  position: relative;
+}
+.from-contain .wrapper .radio-check {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 3px;
+  border: 1px solid rgba(65, 155, 116, 0.2) !important;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 9;
+}
+.from-contain .wrapper .radio-check.radio-circle {
+  border-radius: 50%;
+}
+.from-contain .wrapper .radio-check::after, .from-contain .wrapper .radio-check::before {
+  content: "";
+  position: absolute;
+  transition: all 0.2s linear;
+}
+.from-contain .wrapper .radio-check::after {
+  width: 100%;
+  height: 0px;
+  background-color: var(--primary-color);
+  z-index: -2;
+  top: 0;
+  left: 0;
+}
+.from-contain .wrapper .radio-check::before {
+  background: url("../images/check.svg") center/contain no-repeat;
+  width: 15px;
+  height: 15px;
+  transform: scale(0);
+  z-index: -1;
+  top: calc(50% - 7.5px);
+  left: calc(50% - 7.5px);
+}
+.from-contain .wrapper .radio-check:checked {
+  background-color: var(--primary-color);
+}
+.from-contain .wrapper .radio-check:checked::after {
+  height: 100%;
+}
+.from-contain .wrapper .radio-check:checked::before {
+  transform: scale(1);
+}
+.from-contain .wrapper .radio-title {
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  -webkit-margin-start: 10px;
+          margin-inline-start: 10px;
+  cursor: pointer;
+  margin-bottom: 0px !important;
+}
+.from-contain .custom-btn {
   margin: auto;
 }
 
@@ -2731,13 +2882,13 @@ footer .coprights .techno-logo:hover img {
     right: unset !important;
     left: 0px !important;
   }
-  header .swiper-wrapper {
-    padding-top: 100px;
+  header .swiper-slide {
+    padding: 150px 0px 100px;
   }
-  header .swiper-wrapper h1 {
+  header .swiper-slide h1 {
     font-size: 25px !important;
   }
-  header .swiper-wrapper h1 span {
+  header .swiper-slide h1 span {
     font-size: 25px !important;
   }
   .about-us .contain {

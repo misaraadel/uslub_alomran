@@ -149,3 +149,23 @@ $(document).ready(function () {
     },
   });
 });
+
+$(document).ready(function() {
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#imagePreview').addClass('active');
+        $('#imagePreview').css('background-image', 'url(' + e.target.result + ')');
+        $('#imagePreview').hide();
+        $('#imagePreview').fadeIn(650);
+        $('#uploadShape').addClass('active')
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+  
+  $("#imageUpload").change(function() {
+    readURL(this);
+  });
+});

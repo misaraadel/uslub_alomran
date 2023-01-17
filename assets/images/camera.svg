@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="camera" transform="translate(-784 -273)">
+    <g id="Group_680" data-name="Group 680" transform="translate(784 273)">
+      <path id="Path_241" data-name="Path 241" d="M0,0H48V48H0Z" fill="none"/>
+      <path id="Path_242" data-name="Path 242" d="M17.637,6.992l-4,3.992H6V34.934H37.956V10.984H30.309l-4-3.992ZM15.983,3H27.968l4,3.992h7.99a2,2,0,0,1,2,2V36.93a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V8.988a2,2,0,0,1,2-2h7.99Zm5.993,29.938A10.977,10.977,0,1,1,32.962,21.961,10.982,10.982,0,0,1,21.975,32.938Zm0-3.992a6.986,6.986,0,1,0-6.991-6.986,6.989,6.989,0,0,0,6.991,6.986Z" transform="translate(2.025 3.037)"/>
+    </g>
+  </g>
+</svg>
